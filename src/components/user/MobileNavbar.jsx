@@ -1,28 +1,45 @@
-import { Menu, Search } from "lucide-react"
+import { Menu } from "lucide-react"
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
+import { ThemeContext } from "@/context/ThemeContext"
+import { useContext } from "react"
+import { BiSun } from "react-icons/bi";
+import { FaMoon } from "react-icons/fa";
+
+
 
 
 export default function MobileNavbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const { isDarkTheme, toggleTheme } = useContext(ThemeContext);
 
   return (
     <>
-      <nav className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <nav className="sticky top-0 z-50 w-full dark:text-white text-white bg-background/95 dark:bg-black backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="flex w-full h-14 items-center justify-between px-5 pt-5">
           <button>
-            <Menu  size={25}/>
+            <Menu size={28} className="dark:text-white text-black"/>
             <span className="sr-only">Toggle menu</span>
           </button>
-            {/* <form className="flex-1">
+          {/* <form className="flex-1">
               <div className="relative">
                 <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
                 <Input placeholder="Search your favourit food" className="pl-8" />
               </div>
             </form> */}
-              <Search size={25} />
-              <span className="sr-only">Search</span>
+          <div className="flex gap-2 items-center">
+            <button
+              onClick={toggleTheme}
+              className='rounded-full transition-all hover:scale-110'
+              aria-label="Toggle dark mode"
+            >
+              {isDarkTheme ? <BiSun className="text-gray-900 dark:text-white" size={30} /> : <FaMoon className="text-gray-900 dark:text-white" size={27} />}
+            </button>
+            {/* <Search size={28} className="dark:text-white text-black"/>
+            <span className="sr-only">Search</span> */}
           </div>
+
+        </div>
       </nav>
 
       <AnimatePresence>

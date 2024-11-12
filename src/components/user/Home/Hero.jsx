@@ -15,7 +15,7 @@ const Hero = () => {
               <span className="mb-4 inline-block text-sm uppercase tracking-wider text-[#C8A97E]">
                 DELIGHTFUL EXPERIENCE
               </span>
-              <div className="mx-auto h-[2px] w-20 bg-[#7FC380]" />
+              <div className="mx-auto h-[2px] w-20 bg-amber-400" />
             </div>
             <h1 className="text-4xl font-light leading-tight sm:text-5xl md:text-6xl lg:text-7xl">
               Flavors Inspired by<br />the Seasons
@@ -23,7 +23,7 @@ const Hero = () => {
             <p className="mx-auto max-w-2xl text-lg text-white/80">
               Come with family & feel the joy of mouthwatering food
             </p>
-            <button className="mt-8 border-2 border-[#7FC380] px-8 py-3 text-sm font-medium text-[#7FC380] transition-colors hover:bg-[#7FC380] hover:text-white">
+            <button className="mt-8 border-2 border-amber-400 px-8 py-3 text-sm font-medium text-amber-400 transition-colors hover:bg-amber-500 hover:text-white">
               VIEW OUR MENU
             </button>
           </div>

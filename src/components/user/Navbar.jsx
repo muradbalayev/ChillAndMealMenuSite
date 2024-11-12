@@ -1,34 +1,39 @@
+import { ThemeContext } from "@/context/ThemeContext"
 import { Clock, Mail, MapPin, Phone } from "lucide-react"
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { Link } from "react-router-dom"
+import { BiSun } from "react-icons/bi";
+import { FaMoon } from "react-icons/fa";
+
 // import logo from '../../assets/logoRestaurant.svg'
 
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const { isDarkTheme, toggleTheme } = useContext(ThemeContext);
 
     return (
         <nav>
             {/* Top Bar */}
-            <div className="hidden w-full bg-black/95 px-4 py-2 text-white/90 md:block">
+            <div className="hidden w-full dark:bg-black/95 px-4 py-2 dark:text-white/90 md:block">
                 <div className="mx-auto flex items-center justify-between text-sm">
                     <div className="flex items-center gap-8">
-                        <div className="flex items-center gap-2">
-                            <MapPin size={16} />
+                        <div className="flex text-black dark:text-gray-100 items-center gap-2">
+                            <MapPin className="text-black dark:text-gray-100" size={16} />
                             <span>Restaurant St, Baku, Azerbaijan</span>
                         </div>
-                        <div className="flex items-center gap-2">
-                            <Clock size={16} />
+                        <div className="flex items-center gap-2 text-black dark:text-gray-100">
+                            <Clock className="text-black dark:text-gray-100" size={16} />
                             <span>Daily : 8:00 am to 10:00 pm</span>
                         </div>
                     </div>
-                    <div className="flex items-center gap-8">
-                        <div className="flex items-center gap-2">
-                            <Phone size={16} />
+                    <div className="flex items-center gap-8 ">
+                        <div className="flex items-center gap-2 text-black dark:text-gray-100">
+                            <Phone className="text-black dark:text-gray-100" size={16} />
                             <span>+994 123 456 7890</span>
                         </div>
-                        <div className="flex items-center gap-2">
-                            <Mail size={16} />
+                        <div className="flex items-center gap-2 text-black dark:text-gray-100">
+                            <Mail className="text-black dark:text-gray-100" size={16} />
                             <span>booking@restaurant.com</span>
                         </div>
                     </div>
@@ -36,27 +41,37 @@ const Navbar = () => {
             </div>
 
             {/* Main Navigation */}
-            <nav className="sticky top-0 z-50 w-full bg-black/95 px-4">
+            <nav className="sticky top-0 z-50 w-full dark:bg-black/95 dark:text-white px-4">
                 <div className="mx-auto flex  items-center justify-between py-4">
                     {/* Logo */}
-                    <Link to="/" className="overflow-hidden text-white font-bold text-xl">
+                    <Link to="/" className="overflow-hidden dark:text-white text-black font-bold text-xl">
                         {/* <img src={logo} alt="logo" className="w-full h-full object-cover" /> */}
                         <p> Chill and Meal</p>
                     </Link>
 
                     {/* Desktop Navigation */}
-                    <div className="hidden items-center gap-8 md:flex">
-                        <Link to="/" className="nav-link text-white hover:text-gold">HOME</Link>
-                        <Link to="/menu" className="nav-link text-white hover:text-gold">MENUS</Link>
-                        <Link to="/about" className="nav-link text-white hover:text-gold">ABOUT US</Link>
-                        <Link to="/chefs" className="nav-link text-white hover:text-gold">OUR CHEFS</Link>
-                        <Link to="/contact" className="nav-link text-white hover:text-gold">CONTACT</Link>
+                    <div className="hidden dark:text-white text-black items-center gap-8 md:flex">
+                        <Link to="/" className="nav-link font-medium hover:text-gold">HOME</Link>
+                        <Link to="/menu" className="nav-link font-medium hover:text-gold">MENUS</Link>
+                        <Link to="/about" className="nav-link font-medium hover:text-gold">ABOUT US</Link>
+                        <Link to="/chefs" className="nav-link font-medium hover:text-gold">OUR CHEFS</Link>
+                        <Link to="/contact" className="nav-link font-medium hover:text-gold">CONTACT</Link>
                     </div>
 
                     {/* Find a Table Button */}
-                    <button className="hidden bg-[#7FC380] px-6 py-2 text-sm font-medium text-white transition-colors hover:bg-[#3f7a40] md:block">
-                        FIND A TABLE
-                    </button>
+                    <div className="flex items-center gap-2">
+
+                        <button
+                            onClick={toggleTheme}
+                            className='rounded-full transition-all hover:scale-110'
+                            aria-label="Toggle dark mode"
+                        >
+                            {isDarkTheme ? <BiSun className="text-gray-900 dark:text-white" size={30} /> : <FaMoon className="text-gray-900 dark:text-white" size={27} />}
+                        </button>
+                        <button className="hidden bg-amber-400 px-6 py-2 text-sm font-medium text-white transition-colors hover:bg-amber-500 md:block">
+                            FIND A TABLE
+                        </button>
+                    </div>
 
                     {/* Mobile Menu Button */}
                     <button

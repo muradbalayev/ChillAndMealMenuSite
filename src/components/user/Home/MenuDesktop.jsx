@@ -59,16 +59,16 @@ export default function DesktopMenu() {
 
 
   return (
-    <div className="hidden md:block min-h-screen bg-black text-white py-16 px-8">
+    <div className="hidden md:block dark:bg-black dark:text-white py-16 px-8">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-16"
         >
-          <p className="text-amber-400 mb-4 tracking-widest">SPECIAL SELECTION</p>
+          <p className="dark:text-amber-400 text-black mb-4 tracking-widest">SPECIAL SELECTION</p>
           <div className="flex items-center justify-center gap-4 mb-2">
-            <div className="h-px w-8 bg-amber-400" />
+            <div className="h-px w-8 dark:bg-amber-400 bg-black" />
             <motion.h1
               initial={{ scale: 0.9 }}
               animate={{ scale: 1 }}
@@ -76,7 +76,7 @@ export default function DesktopMenu() {
             >
               Delicious Menu
             </motion.h1>
-            <div className="h-px w-8 bg-amber-400" />
+            <div className="h-px w-8 dark:bg-amber-400 bg-black" />
           </div>
         </motion.div>
 
@@ -92,27 +92,26 @@ export default function DesktopMenu() {
               variants={item}
               className="flex gap-4 group"
             >
-              <motion.img
-                whileHover={{ scale: 1.05 }}
+              <img
                 src={item.image}
                 alt={item.name}
-                className="w-20 h-20 rounded-lg object-cover"
+                className="w-24 h-24 rounded-lg object-cover group-hover:scale-105 transition duration-300 ease-in-out"
               />
               <div className="flex-1">
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-2">
-                    <h3 className="text-xl font-medium group-hover:text-amber-400 transition-colors">
+                    <h3 className="text-xl font-medium dark:group-hover:text-amber-400 transition-colors">
                       {item.name}
                     </h3>
                     {item.tag && (
-                      <Badge variant="outline" className="bg-amber-400/10 text-amber-400 border-amber-400/20">
+                      <Badge variant="outline" className="dark:bg-amber-400/10 bg-gray-100 dark:text-amber-400 border-amber-400/20">
                         {item.tag}
                       </Badge>
                     )}
                   </div>
-                  <div className="flex items-center gap-2">
-                    <div className="h-px w-12 bg-amber-400/30" />
-                    <span className="text-xl font-medium text-amber-400">
+                  <div className="flex items-center gap-2 group-hover:pr-1 transition-all duration-200 ease-in-out">
+                    <div className="h-px w-12 dark:bg-amber-400/30 bg-black" />
+                    <span className="text-xl font-medium dark:text-amber-400">
                       ${item.price.toFixed(2)}
                     </span>
                   </div>
@@ -126,8 +125,8 @@ export default function DesktopMenu() {
         <div className="text-center space-y-8">
           <p className="text-gray-400">
             During winter daily from{" "}
-            <span className="text-amber-400">7:00 pm</span> to{" "}
-            <span className="text-amber-400">9:00 pm</span>
+            <span className="dark:text-amber-400 text-black font-semibold">7:00 pm</span> to{" "}
+            <span className="dark:text-amber-400 text-black font-semibold">9:00 pm</span>
           </p>
           
           <motion.div
@@ -137,7 +136,7 @@ export default function DesktopMenu() {
           >
             <Button
               variant="outline"
-              className=" text-amber-600 font-bold hover:bg-amber-400 hover:text-black"
+              className=" dark:text-amber-400 font-bold dark:hover:bg-amber-400 dark:hover:text-white bg-black text-white hover:text-black"
             >
               VIEW ALL MENU
             </Button>
@@ -148,7 +147,7 @@ export default function DesktopMenu() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           whileHover={{ y: -5 }}
-          className="fixed bottom-8 right-8 p-3 rounded-full bg-amber-400 text-black"
+          className="fixed bottom-8 right-8 p-3 rounded-full dark:bg-amber-400 bg-black dark:text-black text-white"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
           <ArrowUp className="w-6 h-6" />
