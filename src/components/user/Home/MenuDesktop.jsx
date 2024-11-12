@@ -72,7 +72,7 @@ export default function DesktopMenu() {
             <motion.h1
               initial={{ scale: 0.9 }}
               animate={{ scale: 1 }}
-              className="text-5xl font-serif"
+              className="text-5xl font-serif text-black dark:text-white"
             >
               Delicious Menu
             </motion.h1>
@@ -100,7 +100,7 @@ export default function DesktopMenu() {
               <div className="flex-1">
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-2">
-                    <h3 className="text-xl font-medium dark:group-hover:text-amber-400 transition-colors">
+                    <h3 className="text-xl dark:text-white text-black font-medium dark:group-hover:text-amber-400 transition-colors">
                       {item.name}
                     </h3>
                     {item.tag && (
@@ -111,7 +111,7 @@ export default function DesktopMenu() {
                   </div>
                   <div className="flex items-center gap-2 group-hover:pr-1 transition-all duration-200 ease-in-out">
                     <div className="h-px w-12 dark:bg-amber-400/30 bg-black" />
-                    <span className="text-xl font-medium dark:text-amber-400">
+                    <span className="text-xl font-medium dark:text-amber-400 text-black">
                       ${item.price.toFixed(2)}
                     </span>
                   </div>

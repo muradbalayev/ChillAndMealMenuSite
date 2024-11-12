@@ -50,7 +50,7 @@ const itemVariants = {
 
 const ChefsPage = () => {
   return (
-    <div className="bg-black text-white min-h-screen py-16 px-4 sm:px-6 lg:px-8">
+    <div className=" text-white min-h-screen py-16 px-4 sm:px-6 lg:px-8">
       <motion.div
         initial="hidden"
         animate="visible"
@@ -59,7 +59,7 @@ const ChefsPage = () => {
       >
         <motion.h1
           variants={itemVariants}
-          className="text-4xl font-bold text-center mb-12"
+          className="text-4xl font-bold text-center mb-12 text-black dark:text-white"
         >
           Meet Our Culinary Team
         </motion.h1>
@@ -69,7 +69,7 @@ const ChefsPage = () => {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="bg-gray-900 group rounded-lg overflow-hidden shadow-lg"
+              className="dark:bg-gray-900 bg-gray-200 group rounded-lg overflow-hidden shadow-lg"
             >
               <motion.img
                 src={chef.image}
@@ -79,12 +79,12 @@ const ChefsPage = () => {
                 transition={{ duration: 0.3 }}
               />
               <div className="p-6">
-                <h2 className="text-2xl font-bold mb-2">{chef.name}</h2>
-                <p className="text-amber-400 mb-4">{chef.role}</p>
-                <p className="text-gray-400 mb-4">{chef.bio}</p>
+                <h2 className="text-2xl font-bold mb-2 dark:text-white text-black">{chef.name}</h2>
+                <p className="dark:text-amber-400 text-black mb-4">{chef.role}</p>
+                <p className="dark:text-gray-400 text-gray-800 mb-4">{chef.bio}</p>
                 <div className="mb-4">
-                  <h3 className="text-lg font-semibold mb-2">Specialties:</h3>
-                  <ul className="list-disc list-inside text-gray-400">
+                  <h3 className="text-lg font-semibold mb-2 dark:text-white text-black">Specialties:</h3>
+                  <ul className="list-disc list-inside dark:text-gray-400 text-gray-800">
                     {chef.specialties.map((specialty, idx) => (
                       <li key={idx}>{specialty}</li>
                     ))}

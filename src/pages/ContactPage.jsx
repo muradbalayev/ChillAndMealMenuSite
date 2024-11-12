@@ -43,7 +43,7 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white py-16 px-8">
+    <div className="dark:text-white text-black py-16 px-8">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial="hidden"
@@ -52,16 +52,16 @@ export default function ContactPage() {
           variants={containerVariants}
           className="text-center mb-16"
         >
-          <motion.p variants={itemVariants} className="text-amber-400 mb-4 tracking-widest">GET IN TOUCH</motion.p>
+          <motion.p variants={itemVariants} className="dark:text-amber-400 text-black mb-4 tracking-widest">GET IN TOUCH</motion.p>
           <div className="flex items-center justify-center gap-4 mb-2">
-            <motion.div variants={itemVariants} className="h-px w-12 bg-amber-400" />
+            <motion.div variants={itemVariants} className="h-px w-12 dark:bg-amber-400 bg-black" />
             <motion.h1
               variants={itemVariants}
-              className="text-6xl font-serif"
+              className="text-6xl font-serif dark:text-white text-black"
             >
               Contact Us
             </motion.h1>
-            <motion.div variants={itemVariants} className="h-px w-12 bg-amber-400" />
+            <motion.div variants={itemVariants} className="h-px w-12 dark:bg-amber-400 bg-black" />
           </div>
           <motion.p variants={itemVariants} className="text-gray-400 mt-4 max-w-2xl mx-auto">
             We&apos;d love to hear from you. Whether you have a question about our menu, want to make a reservation, or just want to say hello, we&apos;re here for you.
@@ -75,24 +75,24 @@ export default function ContactPage() {
             viewport={{ once: true, amount: 0.8 }}
             variants={containerVariants}
           >
-            <motion.h2 variants={itemVariants} className="text-3xl font-serif text-amber-400 mb-8">Contact Information</motion.h2>
+            <motion.h2 variants={itemVariants} className="text-3xl font-serif dark:text-amber-400 text-black mb-8">Contact Information</motion.h2>
             <motion.div variants={itemVariants} className="space-y-6">
               <div className="flex items-center gap-4">
-                <MapPin className="w-6 h-6 text-amber-400" />
-                <p>123 Gourmet Street, Foodie City, FC 12345</p>
+                <MapPin className="w-6 h-6 dark:text-amber-400 text-gray-500" />
+                <p className='text-gray-600 dark:text-gray-100'>123 Gourmet Street, Foodie City, FC 12345</p>
               </div>
               <div className="flex items-center gap-4">
-                <Phone className="w-6 h-6 text-amber-400" />
-                <p>(555) 123-4567</p>
+                <Phone className="w-6 h-6 dark:text-amber-400 text-gray-500" />
+                <p className='text-gray-600 dark:text-gray-100'>(555) 123-4567</p>
               </div>
               <div className="flex items-center gap-4">
-                <Mail className="w-6 h-6 text-amber-400" />
-                <p>info@exquisiterestaurant.com</p>
+                <Mail className="w-6 h-6 dark:text-amber-400 text-gray-500" />
+                <p className='text-gray-600 dark:text-gray-100'>info@exquisiterestaurant.com</p>
               </div>
             </motion.div>
             <motion.div variants={itemVariants} className="mt-12">
-              <h3 className="text-2xl font-serif text-amber-400 mb-4">Opening Hours</h3>
-              <ul className="space-y-2">
+              <h3 className="text-2xl font-serif dark:text-amber-400 text-black mb-4">Opening Hours</h3>
+              <ul className="space-y-2 text-gray-600 dark:text-gray-100">
                 <li>Monday - Thursday: 5:00 PM - 10:00 PM</li>
                 <li>Friday - Saturday: 5:00 PM - 11:00 PM</li>
                 <li>Sunday: 4:00 PM - 9:00 PM</li>
@@ -106,7 +106,7 @@ export default function ContactPage() {
             viewport={{ once: true, amount: 0.8 }}
             variants={containerVariants}
           >
-            <motion.h2 variants={itemVariants} className="text-3xl font-serif text-amber-400 mb-8">Send Us a Message</motion.h2>
+            <motion.h2 variants={itemVariants} className="text-3xl font-serif dark:text-amber-400 text-black mb-8">Send Us a Message</motion.h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               <motion.div variants={itemVariants}>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-2">Name</label>
@@ -117,7 +117,7 @@ export default function ContactPage() {
                   value={formData.name}
                   onChange={handleInputChange}
                   required
-                  className="w-full bg-gray-800 border-gray-700 text-white"
+                  className="w-full dark:bg-gray-800 dark:border-gray-700 dark:text-white text-black"
                 />
               </motion.div>
               <motion.div variants={itemVariants}>
@@ -129,7 +129,7 @@ export default function ContactPage() {
                   value={formData.email}
                   onChange={handleInputChange}
                   required
-                  className="w-full bg-gray-800 border-gray-700 text-white"
+                  className="w-full dark:bg-gray-800 dark:border-gray-700 dark:text-white text-black"
                 />
               </motion.div>
               <motion.div variants={itemVariants}>
@@ -140,7 +140,7 @@ export default function ContactPage() {
                   value={formData.message}
                   onChange={handleInputChange}
                   required
-                  className="w-full bg-gray-800 border-gray-700 text-white"
+                  className="w-full dark:bg-gray-800 dark:border-gray-700 dark:text-white text-black"
                   rows={6}
                 />
               </motion.div>

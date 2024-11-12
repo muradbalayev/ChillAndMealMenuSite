@@ -96,7 +96,7 @@ export default function MenuPage() {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white py-16 px-8">
+    <div className="dark:text-white text-black py-16 px-8">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial="hidden"
@@ -105,18 +105,18 @@ export default function MenuPage() {
           variants={containerVariants}
           className="text-center mb-16"
         >
-          <motion.p variants={itemVariants} className="text-amber-400 mb-4 tracking-widest">CULINARY EXCELLENCE</motion.p>
+          <motion.p variants={itemVariants} className="dark:text-amber-400 text-black mb-4 tracking-widest">CULINARY EXCELLENCE</motion.p>
           <div className="flex items-center justify-center gap-4 mb-2">
-            <motion.div variants={itemVariants} className="h-px w-12 bg-amber-400" />
+            <motion.div variants={itemVariants} className="h-px w-12 dark:bg-amber-400 bg-black" />
             <motion.h1
               variants={itemVariants}
-              className="text-6xl font-serif"
+              className="text-6xl font-serif dark:text-white text-black"
             >
               Our Exquisite Menu
             </motion.h1>
-            <motion.div variants={itemVariants} className="h-px w-12 bg-amber-400" />
+            <motion.div variants={itemVariants} className="h-px w-12 dark:bg-amber-400 bg-black" />
           </div>
-          <motion.p variants={itemVariants} className="text-gray-400 mt-4 max-w-2xl mx-auto">
+          <motion.p variants={itemVariants} className="dark:text-gray-400 text-gray-500 mt-4 max-w-2xl mx-auto">
             Indulge in a symphony of flavors crafted with the finest ingredients and culinary expertise.
             Our menu celebrates both tradition and innovation, offering a memorable dining experience.
           </motion.p>
@@ -133,7 +133,7 @@ export default function MenuPage() {
           >
             <motion.h2
               variants={itemVariants}
-              className="text-3xl font-serif text-amber-400 mb-8 text-center"
+              className="text-3xl font-serif dark:text-amber-400 text-black mb-8 text-center"
             >
               {category.name}
             </motion.h2>
@@ -153,18 +153,18 @@ export default function MenuPage() {
                   <div className="flex-1">
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center gap-2">
-                        <h3 className="text-2xl font-medium group-hover:text-amber-400 transition-colors">
+                        <h3 className="text-2xl font-medium dark:text-white text-black group-hover:text-amber-400 transition-colors">
                           {item.name}
                         </h3>
                         {item.tag && (
-                          <Badge variant="outline" className="bg-amber-400/10 text-amber-400 border-amber-400/20">
+                          <Badge variant="outline" className="dark:bg-amber-400/10 bg-gray-100 dark:text-amber-400 border-amber-400/20">
                             {item.tag}
                           </Badge>
                         )}
                       </div>
                       <div className="flex items-center gap-2">
-                        <div className="h-px w-12 bg-amber-400/30" />
-                        <span className="text-2xl font-medium text-amber-400">
+                        <div className="h-px w-12 dark:bg-amber-400/30 bg-black" />
+                        <span className="text-2xl font-medium dark:text-amber-400 text-black">
                           ${item.price.toFixed(2)}
                         </span>
                       </div>
@@ -191,27 +191,27 @@ export default function MenuPage() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.8 }}
           variants={containerVariants}
-          className="text-center space-y-8 bg-gray-900 p-8 rounded-lg"
+          className="text-center space-y-8 dark:bg-gray-900 bg-gray-100 p-8 rounded-lg"
         >
-          <motion.h2 variants={itemVariants} className="text-3xl font-serif text-amber-400">Restaurant Information</motion.h2>
+          <motion.h2 variants={itemVariants} className="text-3xl font-serif dark:text-amber-400 text-gray-900">Restaurant Information</motion.h2>
           <motion.div variants={itemVariants} className="flex justify-center gap-8 text-gray-400">
-            <div className="flex items-center gap-2">
-              <Clock className="w-5 h-5 text-amber-400" />
+            <div className="flex items-center gap-2 dark:text-gray-400 text-gray-500">
+              <Clock className="w-5 h-5 dark:text-amber-400 text-gray-500" />
               <p>Open daily: 5:00 PM - 11:00 PM</p>
             </div>
-            <div className="flex items-center gap-2">
-              <MapPin className="w-5 h-5 text-amber-400" />
+            <div className="flex items-center gap-2 dark:text-gray-400 text-gray-500">
+              <MapPin className="w-5 h-5 dark:text-amber-400 text-gray-500" />
               <p>123 Gourmet Street, Foodie City</p>
             </div>
-            <div className="flex items-center gap-2">
-              <Phone className="w-5 h-5 text-amber-400" />
+            <div className="flex items-center gap-2 dark:text-gray-400 text-gray-500">
+              <Phone className="w-5 h-5 dark:text-amber-400 text-gray-500" />
               <p>Reservations: (555) 123-4567</p>
             </div>
           </motion.div>
           <motion.div variants={itemVariants}>
             <Button
               variant="outline"
-              className="border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-black"
+              className=" text-black dark:text-amber-400 hover:bg-amber-400 dark:hover:text-black"
             >
               MAKE A RESERVATION
             </Button>

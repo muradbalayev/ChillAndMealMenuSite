@@ -48,20 +48,20 @@ export default function AboutUs() {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white py-16 px-8">
+    <div className=" text-white py-16 px-8">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-16"
         >
-          <p className="text-amber-400 mb-4 tracking-widest">OUR STORY</p>
+          <p className="dark:text-amber-400 text-black mb-4 tracking-widest">OUR STORY</p>
           <div className="flex items-center justify-center gap-4 mb-2">
             <div className="h-px w-8 bg-amber-400" />
             <motion.h1
               initial={{ scale: 0.9 }}
               animate={{ scale: 1 }}
-              className="text-5xl font-serif"
+              className="text-5xl font-serif text-black dark:text-white"
             >
               About Us
             </motion.h1>
@@ -75,10 +75,10 @@ export default function AboutUs() {
           animate="show"
           className="mb-16"
         >
-          <motion.p variants={item} className="text-gray-400 text-lg mb-8 text-center max-w-3xl mx-auto">
+          <motion.p variants={item} className="dark:text-gray-400 text-gray-500  text-lg mb-8 text-center max-w-3xl mx-auto">
             Founded in 2010, our restaurant has been serving exquisite cuisine and unforgettable dining experiences for over a decade. We pride ourselves on using only the freshest, locally-sourced ingredients to create innovative dishes that delight the senses.
           </motion.p>
-          <motion.p variants={item} className="text-gray-400 text-lg mb-8 text-center max-w-3xl mx-auto">
+          <motion.p variants={item} className="dark:text-gray-400 text-gray-500  text-lg mb-8 text-center max-w-3xl mx-auto">
             Our mission is to provide our guests with not just a meal, but a journey through flavors, textures, and culinary traditions from around the world, all while maintaining a commitment to sustainability and supporting our local community.
           </motion.p>
         </motion.div>
@@ -104,7 +104,7 @@ export default function AboutUs() {
               <div className="flex-1">
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-2">
-                    <h3 className="text-xl font-medium group-hover:text-amber-400 transition-colors">
+                    <h3 className="text-xl font-medium text-black dark:text-white group-hover:text-amber-400 transition-colors">
                       {member.name}
                     </h3>
                     <Badge variant="outline" className="bg-amber-400/10 text-amber-400 border-amber-400/20">
@@ -131,11 +131,11 @@ export default function AboutUs() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            <Button
+              <Button
               variant="outline"
-              className=" text-black hover:bg-black hover:text-white"
+              className=" dark:text-amber-400 font-bold dark:hover:bg-amber-500 dark:hover:text-white bg-black text-white hover:text-black"
             >
-              MAKE A RESERVATION
+              Make a Reservation
             </Button>
           </motion.div>
         </div>
