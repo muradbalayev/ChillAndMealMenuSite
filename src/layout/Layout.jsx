@@ -12,7 +12,7 @@ const Layout = () => {
             {(location.pathname === '/' || location.pathname === '/about' || location.pathname === '/menu' || location.pathname === '/chefs' || location.pathname === '/contact') && <Navbar />}
             </div>
             <div className='md:hidden block'>
-                {location.pathname === '/' && <MobileNavbar />}
+                {(location.pathname === '/' || location.pathname === '/about' || location.pathname === '/menu' || location.pathname === '/chefs' || location.pathname === '/contact')  && <MobileNavbar />}
             </div>
             <Outlet />
             <div className=''>

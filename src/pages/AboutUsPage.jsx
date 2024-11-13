@@ -57,7 +57,7 @@ export default function AboutUs() {
         >
           <p className="dark:text-amber-400 text-black mb-4 tracking-widest">OUR STORY</p>
           <div className="flex items-center justify-center gap-4 mb-2">
-            <div className="h-px w-8 bg-amber-400" />
+            <div className="h-px w-8 dark:bg-amber-400 bg-black" />
             <motion.h1
               initial={{ scale: 0.9 }}
               animate={{ scale: 1 }}
@@ -65,7 +65,7 @@ export default function AboutUs() {
             >
               About Us
             </motion.h1>
-            <div className="h-px w-8 bg-amber-400" />
+            <div className="h-px w-8 dark:bg-amber-400 bg-black" />
           </div>
         </motion.div>
 
@@ -107,7 +107,7 @@ export default function AboutUs() {
                     <h3 className="text-xl font-medium text-black dark:text-white group-hover:text-amber-400 transition-colors">
                       {member.name}
                     </h3>
-                    <Badge variant="outline" className="bg-amber-400/10 text-amber-400 border-amber-400/20">
+                    <Badge variant="outline" className="dark:bg-amber-400/10 md:text-start text-center bg-gray-100 text-black dark:text-amber-400 border-amber-400/20">
                       {member.role}
                     </Badge>
                   </div>

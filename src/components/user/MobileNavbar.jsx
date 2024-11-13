@@ -5,6 +5,7 @@ import { ThemeContext } from "@/context/ThemeContext"
 import { useContext } from "react"
 import { BiSun } from "react-icons/bi";
 import { FaMoon } from "react-icons/fa";
+import { Link } from "react-router-dom"
 
 
 
@@ -15,10 +16,10 @@ export default function MobileNavbar() {
 
   return (
     <>
-      <nav className="sticky top-0 z-50 w-full dark:text-white text-white bg-background/95 dark:bg-black backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="flex w-full h-14 items-center justify-between px-5 pt-5">
-          <button>
-            <Menu size={28} className="dark:text-white text-black"/>
+      <nav className="sticky top-0 z-50 w-full dark:text-white text-black bg-background/95 dark:bg-black backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div className="flex w-full h-14 items-center justify-between px-5 py-5">
+          <button onClick={() => setIsOpen(true)}>
+            <Menu  size={28} className="dark:text-white text-black"/>
             <span className="sr-only">Toggle menu</span>
           </button>
           {/* <form className="flex-1">
@@ -59,20 +60,20 @@ export default function MobileNavbar() {
               className="fixed inset-y-0 left-0 z-50 h-full w-3/4 border-r bg-background p-6 shadow-lg "
             >
               <div className="flex flex-col gap-6">
-                <h2 className="text-2xl font-bold">Menu</h2>
-                <nav className="flex flex-col gap-4">
-                  <a href="#" className="text-lg font-medium hover:text-primary">
+                <h2 className="text-2xl font-bold dark:text-white text-black">Menu</h2>
+                <nav className="flex flex-col gap-4 dark:text-white text-black">
+                  <Link onClick={() => setIsOpen(false)} to="/" className="text-lg font-medium hover:text-primary">
                     Home
-                  </a>
-                  <a href="#" className="text-lg font-medium hover:text-primary">
-                    Categories
-                  </a>
-                  <a href="#" className="text-lg font-medium hover:text-primary">
-                    Orders
-                  </a>
-                  <a href="#" className="text-lg font-medium hover:text-primary">
-                    Profile
-                  </a>
+                  </Link>
+                  <Link onClick={() => setIsOpen(false)} to="chefs" className="text-lg font-medium hover:text-primary">
+                    Chefs
+                  </Link>
+                  <Link onClick={() => setIsOpen(false)} to="/about" className="text-lg font-medium hover:text-primary">
+                    About Us
+                  </Link>
+                  <Link onClick={() => setIsOpen(false)} to="/contact" className="text-lg font-medium hover:text-primary">
+                    Contact
+                  </Link>
                 </nav>
               </div>
             </motion.div>

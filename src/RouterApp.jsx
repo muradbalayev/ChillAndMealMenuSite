@@ -15,7 +15,7 @@ const RouterApp = () => {
     return (
         <>
             <div className={`${isDarkTheme ? 'dark' : ''}`}>
-                <div className="dark:bg-black min-h-screen relative">
+                <div className="dark:bg-black min-h-screen relative w-full">
 
                     <Routes>
                         <Route element={<Layout />}>

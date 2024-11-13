@@ -189,11 +189,11 @@ export default function Menu() {
                     ))}
                 </div>
 
-                <div className="mt-6 grid grid-cols-2 gap-4 w-full">
+                <div className="mt-6 grid grid-cols-2 gap-4 w-full ">
                     {menuItems.filter((item) => item.category === activeCategory).map((item) => (
                         <Link to={`/menu/${item.id}`} key={item.id} className="group">
-                            <motion.div key={item.id} whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.95 }}>
-                                <Card className="overflow-hidden dark:bg-gray-800">
+                            <motion.div className="h-full" key={item.id} whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.95 }}>
+                                <Card className="overflow-hidden dark:bg-gray-800 h-full">
                                     <CardHeader className="p-0">
                                         <div className="relative aspect-square">
                                             <img alt={item.name} className="object-cover w-full h-full" src={item.image} />
